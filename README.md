@@ -1,24 +1,23 @@
 RunMyProcess SEC SMTP Adapter
 =============================
 
-The "SMTP Adapter" is used to send emails through a local SMTP server. It requires the [sec Manager](https://github.com/runmyprocess/sec-manager) to be installed and running.  
+The "SMTP Adapter" is used to send emails through a local SMTP server. It requires the [SEC Manager](https://github.com/runmyprocess/sec-manager) to be installed and running.  
 
 
 
 ##Install and Configure the Adapter
-1. Make sure you have [java](http://www.oracle.com/technetwork/java/index.html) and [maven](http://maven.apache.org/) installed on your machine.
-2. Download the sec-SMTP project and  run mvn clean install on the project's folder
-
-run mvn clean install
+1. Make sure you have [java](http://www.oracle.com/technetwork/java/index.html) and [Maven](http://maven.apache.org/) installed on your machine.
+2. Download the sec-SMTP project and run mvn clean install in the project's folder.
+Run mvn clean install :
 
 	mvn clean install
 
-3. copy the generated jar file (usually created on a generated "target" folder in the SMTP project's folder) to a folder of your choosing.
+3. Copy the generated jar file (usually created on a generated "target" folder in the SMTP project's folder) to a folder of your choice.
 4. Create a "configFiles" folder in the jar file's path.
-5. inside the "configFiles" folder you must create 2 config files: handler.config and the SMTP.config
+5. Inside the "configFiles" folder, you must create 2 config files : handler.config and the SMTP.config
 
 
-The **handler.config** file should look like this:
+The **handler.config** file should look like this :
     
         #Generic Protocol Configuration
         protocol = SMTP
@@ -37,9 +36,9 @@ Where :
 * **connectionPort** is the port of the adapter where data will be received and returned.
 * **managerHost** is where the SEC is running. 
 * **managerPort** is the port where the SEC is listening for ping registrations.
-* **pingFrequency** is the frequency in which the manager will be pinged (at least three times smaller than what's configured in the manager).  
+* **pingFrequency** is the frequency in which the manager will be pinged (at least three times shorter than what's configured in the manager).  
 
-The **SMTP.config** file should look like this:
+The **SMTP.config** file should look like this :
    
     #SMTP Configuration
     mail.smtp.auth=true
@@ -50,11 +49,11 @@ The **SMTP.config** file should look like this:
 You should replace these values with your **local SMTP server informaton**.
 
 ##Running and Testing the Adapter
-You can now run the Adapter by executing the generated jar in the chosen path:
+You can now run the Adapter by executing the generated jar in the chosen path :
 
     java -jar SMTPAdapter.jar
     
-If everything is configured correctly and the sec-Manager is running, you can now Post the manager to sent an smtp mail with the configured smtp provider.
+If everything is configured correctly and the sec-Manager is running, you can now Post the manager to send an SMTP mail with the configured SMTP provider.
 The POST body should look like something like this:
     
 	{
@@ -81,7 +80,7 @@ The POST body should look like something like this:
 			]
 		} 
 	}
-The password can be encoded in base64 by assigning "base64"  to "encoder" in the "password" object and sending the password as base64.
+The password can be encoded in base64 by assigning "base64" to "encoder" in the "password" object and sending the password as base64.
 
 The expected return is a JSON object that should look like this :
 
