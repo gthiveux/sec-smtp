@@ -7,8 +7,9 @@ The "SMTP Adapter" is used to send emails through a local SMTP server. It requir
 
 ##Install and Configure the Adapter
 1. Make sure you have [Java](http://www.oracle.com/technetwork/java/index.html) and [Maven](http://maven.apache.org/) installed on your machine.
-2. Download the sec-SMTP project and run mvn clean install in the project's folder.  
-Run mvn clean install :  
+2. Download the sec-SMTP project and run mvn clean install in the project's folder.
+
+Run mvn clean install :
 
 	mvn clean install
 
