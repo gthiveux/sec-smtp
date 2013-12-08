@@ -13,7 +13,7 @@ Run mvn clean install :
 
 	mvn clean install
 
-3. Copy the generated jar file (usually created on a generated "target" folder in the SMTP project's folder) to a folder of your choice.
+3. Copy the generated jar file (usually created in a generated "target" folder in the SMTP project's folder) to a folder of your choice.
 4. Create a "configFiles" folder in the jar file's path.
 5. Inside the "configFiles" folder, you must create 2 config files : handler.config and the SMTP.config
 
